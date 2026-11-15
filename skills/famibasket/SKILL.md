@@ -33,14 +33,17 @@ match, nothing is changed and the result lists the available names — ask the u
    - in the list's language (returned as `list.language`); if it is not known yet, use the language the user writes in;
    - a count goes in front: "2 Bread", "6 Eggs"; a weight or volume with a unit goes after the name and is stored as the comment: "Flour 500 g".
 4. Use the object form when the user gives details: `{"name": "Coffee", "quantity": 2, "stores": ["Lidl"], "comment": "decaf", "urgent": true}`.
-   For an item that is already on the list these details replace the current ones, so pass only what the user actually said.
-5. From a recipe, merge repeated ingredients, skip staples the user says they have (water, salt, oil — ask if unsure), and round to buyable amounts.
-6. After the call, tell the user in one or two sentences what was added, what was already there and anything that failed with its reason.
+5. For an item that is already on the list and not yet bought, `add_items` adds to what is there and overwrites nothing: counts are summed
+   (1 + "3 Eggs" → 4), amounts in compatible units are summed ("1 kg" + "Flour 200 g" → "1 kg 200 g"), other amounts and comment text are
+   appended, stores are added. "Add another 200 g of flour" is `add_items`; "make it 3, not 2" is `update_items`, which sets the exact value.
+   Calling `add_items` twice adds twice. The result shows the quantity or amount before and after — tell the user the new total.
+6. From a recipe, merge repeated ingredients, skip staples the user says they have (water, salt, oil — ask if unsure), and round to buyable amounts.
+7. After the call, tell the user in one or two sentences what was added, what was already there and anything that failed with its reason.
 
 ## Ticking off, changing and removing
 
 - "I bought the bread" → `mark_bought` with the item name or id. "Not bought after all" → `mark_bought` with `bought: false`.
-- "We need three, not two" → `update_items` with the new quantity. Pass only the fields the user mentioned.
+- "We need three, not two" → `update_items` with the new quantity (it sets the value; `add_items` would add to it). Pass only the fields the user mentioned.
 - "Take the chips off the list" → `remove_items`. This does not delete anything; the item can be added again later.
 - When a name is ambiguous, call `get_shopping_list` and use item ids.
 

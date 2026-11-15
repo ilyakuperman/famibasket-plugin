@@ -16,10 +16,10 @@ The plugin contains no local code, scripts or hooks. It runs nothing on your com
 
 | Tool | Reads or changes | What it does |
 | --- | --- | --- |
-| `add_items` | changes | Adds one or many items; items the family had before come back instead of being duplicated |
+| `add_items` | changes | Adds one or many items; items the family had before come back instead of being duplicated; for an item already on the list the amounts are added (1 kg + 200 g = 1 kg 200 g) |
 | `get_shopping_list` | reads | Items to buy by store department, then recently bought items |
 | `mark_bought` | changes | Ticks items as bought or back to buy |
-| `update_items` | changes | Changes quantity, stores, comment or the urgent flag |
+| `update_items` | changes | Sets quantity, stores, comment or the urgent flag to an exact value |
 | `remove_items` | changes | Takes items off the list (they stay in the family's saved items) |
 | `list_shopping_lists` | reads | Your lists, their language and which one is the default |
 
