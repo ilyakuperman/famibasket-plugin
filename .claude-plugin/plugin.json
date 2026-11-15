@@ -1,0 +1,21 @@
+{
+  "name": "famibasket",
+  "displayName": "Famibasket",
+  "version": "1.0.0",
+  "description": "Keep your Famibasket family shopping list up to date from a conversation: add groceries in one go (from a request, a recipe or a meal plan), see what is on the list, tick items off, change quantities and stores, and take items off the list.",
+  "author": {
+    "name": "Language Systems",
+    "email": "support@famibasket.com",
+    "url": "https://famibasket.com"
+  },
+  "homepage": "https://famibasket.com/assistants/",
+  "privacyPolicyUrl": "https://famibasket.com/privacy.html",
+  "license": "MIT",
+  "keywords": [
+    "shopping list",
+    "groceries",
+    "family",
+    "basket",
+    "meal planning"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "famibasket": {
+      "type": "http",
+      "url": "https://mcp.famibasket.com/mcp"
+    }
+  }
+}
