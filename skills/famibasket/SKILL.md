@@ -37,8 +37,11 @@ match, nothing is changed and the result lists the available names — ask the u
    (1 + "3 Eggs" → 4), amounts in compatible units are summed ("1 kg" + "Flour 200 g" → "1 kg 200 g"), other amounts and comment text are
    appended, stores are added. "Add another 200 g of flour" is `add_items`; "make it 3, not 2" is `update_items`, which sets the exact value.
    Calling `add_items` twice adds twice. The result shows the quantity or amount before and after — tell the user the new total.
-6. From a recipe, merge repeated ingredients, skip staples the user says they have (water, salt, oil — ask if unsure), and round to buyable amounts.
-7. After the call, tell the user in one or two sentences what was added, what was already there and anything that failed with its reason.
+6. Stores: results include `known_stores`, the stores already used in the list. Reuse a known name when the user means the same shop
+   ("Lidl" when the list has "Лидл" — the service itself only matches letter case, spaces and ё/е, not translations); if it is unclear whether
+   a new name is a different shop, ask.
+7. From a recipe, merge repeated ingredients, skip staples the user says they have (water, salt, oil — ask if unsure), and round to buyable amounts.
+8. After the call, tell the user in one or two sentences what was added, what was already there and anything that failed with its reason.
 
 ## Ticking off, changing and removing
 
