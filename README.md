@@ -30,7 +30,7 @@ The tools cannot delete items or lists, rename items, add photos or manage list 
 1. You need a Famibasket account (sign up in the app at [famibasket.com](https://famibasket.com) with Google, Apple or email) and at least one list.
 2. Install the plugin and connect Famibasket when asked. A Famibasket page opens: sign in the same way as in the app, choose which list
    the assistant should add to by default, and select **Allow**.
-3. Try: "Add milk, 2 bread and eggs to my Famibasket list."
+3. Try: "Add milk, 2 bread and eggs to my Famibasket list." Another list can be named in the same request: "Add charcoal to the Country house list."
 
 Full guide with examples: <https://famibasket.com/assistants/>.
 

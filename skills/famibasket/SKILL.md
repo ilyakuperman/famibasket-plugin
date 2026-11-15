@@ -19,7 +19,10 @@ The Famibasket tools work only with the signed-in user's own lists and only chan
 | `remove_items` | Takes items off the list; they stay in the family's saved items and can be added again |
 | `list_shopping_lists` | Lists the user's lists with their language and which one is the default |
 
-Without `list_id`, every tool uses the user's default list (chosen when the user connected Famibasket).
+Every tool except `list_shopping_lists` works on the user's default list (chosen when the user connected Famibasket) unless another list is named:
+`list_name` takes the list's name as the user says it ("add milk to Country house" → `list_name: "Country house"`), `list_id` takes an id from
+`list_shopping_lists`. The name is matched ignoring letter case and extra spaces, and only a full-name match is used: when no list or several lists
+match, nothing is changed and the result lists the available names — ask the user which one they meant rather than guessing.
 
 ## Adding items
 
@@ -44,8 +47,8 @@ Without `list_id`, every tool uses the user's default list (chosen when the user
 ## What the tools cannot do
 
 The Famibasket tools cannot delete items or lists, rename items, change an item's department, add photos, or manage list members and invitations.
-For those, point the user to the Famibasket app (famibasket.com). Lists other than the default one are available too: name the list or pass its `list_id`
-from `list_shopping_lists`.
+For those, point the user to the Famibasket app (famibasket.com). Lists other than the default one are available too: pass the list's name as
+`list_name` in the same call.
 
 ## Errors
 
