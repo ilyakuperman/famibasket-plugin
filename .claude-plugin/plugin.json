@@ -9,6 +9,7 @@
     "url": "https://famibasket.com"
   },
   "homepage": "https://famibasket.com/assistants/",
+  "repository": "https://github.com/ilyakuperman/famibasket-plugin",
   "privacyPolicyUrl": "https://famibasket.com/privacy.html",
   "license": "MIT",
   "keywords": [
